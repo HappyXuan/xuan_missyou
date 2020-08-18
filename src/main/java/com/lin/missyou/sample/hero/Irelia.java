@@ -8,7 +8,7 @@ package com.lin.missyou.sample.hero;
 import com.lin.missyou.sample.ISkill;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Irelia implements ISkill {
 
     public Irelia() {
