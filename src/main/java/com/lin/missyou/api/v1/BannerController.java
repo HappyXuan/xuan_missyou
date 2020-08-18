@@ -5,9 +5,9 @@
  */
 package com.lin.missyou.api.v1;
 
+import com.lin.missyou.sample.IConnect;
 import com.lin.missyou.sample.ISkill;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,13 +17,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class BannerController {
 
     @Autowired
-    @Qualifier("irelia")
-    private ISkill diana;
+    private ISkill iSkill;
+
+    @Autowired
+    private IConnect iConnect;
 
     @GetMapping("/test")
     public String test() {
-        diana.r();
+        iSkill.r();
         return "hello,Doraemon";
+    }
+
+    @GetMapping("/test1")
+    public void test1(){
+        iConnect.connect();
     }
 
 }

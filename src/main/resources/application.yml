@@ -1,2 +1,8 @@
 server:
   port: 8081
+hero:
+  name: camille
+#  condition: irelia111
+mysql:
+  port: 3309
+  ip: 127.0.0.1
