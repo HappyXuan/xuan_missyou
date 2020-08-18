@@ -5,32 +5,21 @@
  */
 package com.lin.missyou.api.v1;
 
-import com.lin.missyou.sample.IConnect;
-import com.lin.missyou.sample.ISkill;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.lin.missyou.exception.http.ForbiddenException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/v1/banner")
+@RequestMapping("/banner")
 public class BannerController {
 
-    @Autowired
-    private ISkill iSkill;
-
-    @Autowired
-    private IConnect iConnect;
-
     @GetMapping("/test")
-    public String test() {
-        iSkill.r();
-        return "hello,Doraemon";
-    }
+    public String test() throws Exception {
+        int a = 1;
+        int b = 0;
 
-    @GetMapping("/test1")
-    public void test1(){
-        iConnect.connect();
+        throw new ForbiddenException(10001);
     }
 
 }

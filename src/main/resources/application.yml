@@ -1,7 +1,7 @@
 server:
   port: 8081
-hero:
-  name: camille
+missyou:
+  api-package: com.lin.missyou.api
 #  condition: irelia111
 mysql:
   port: 3309
