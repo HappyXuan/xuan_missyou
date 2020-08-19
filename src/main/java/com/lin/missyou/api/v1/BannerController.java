@@ -5,19 +5,32 @@
  */
 package com.lin.missyou.api.v1;
 
+import com.lin.missyou.dto.PersonDTO;
 import com.lin.missyou.exception.http.ForbiddenException;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.lin.missyou.service.BannerService;
+import org.hibernate.validator.constraints.Range;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/banner")
+@Validated
 public class BannerController {
 
-    @GetMapping("/test")
-    public String test() throws Exception {
-        int a = 1;
-        int b = 0;
+    @Autowired
+    private BannerService bannerService;
+
+    @GetMapping("/name/{name}")
+    public void getByName(@PathVariable String name){
+        bannerService.getByName(name);
+    }
+
+    @PostMapping("/test/{id}")
+    public String test(@PathVariable @Range(min = 1, max = 10, message = "不可以超过10噢") Integer id,
+                       @RequestParam String name,
+                       @RequestBody @Validated PersonDTO person) throws Exception {
+        PersonDTO personDTO = new PersonDTO();
 
         throw new ForbiddenException(10001);
     }
