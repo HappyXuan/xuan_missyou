@@ -1,8 +1,13 @@
-server:
-  port: 8081
 missyou:
   api-package: com.lin.missyou.api
-#  condition: irelia111
-mysql:
-  port: 3309
-  ip: 127.0.0.1
+spring:
+  http:
+    encoding:
+      charset: utf-8
+      enabled: true
+      force: true
+  profiles:
+    active: dev
+  jpa:
+    hibernate:
+      ddl-auto: update
