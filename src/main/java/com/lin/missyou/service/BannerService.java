@@ -5,8 +5,10 @@
  */
 package com.lin.missyou.service;
 
+import com.lin.missyou.model.Banner;
+
 public interface BannerService {
 
-    void getByName(String name);
+    Banner getByName(String name);
 
 }

@@ -7,6 +7,7 @@ package com.lin.missyou.api.v1;
 
 import com.lin.missyou.dto.PersonDTO;
 import com.lin.missyou.exception.http.ForbiddenException;
+import com.lin.missyou.model.Banner;
 import com.lin.missyou.service.BannerService;
 import org.hibernate.validator.constraints.Range;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,9 @@ public class BannerController {
     private BannerService bannerService;
 
     @GetMapping("/name/{name}")
-    public void getByName(@PathVariable String name){
-        bannerService.getByName(name);
+    public Banner getByName(@PathVariable String name){
+        Banner banner = bannerService.getByName(name);
+        return banner;
     }
 
     @PostMapping("/test/{id}")
