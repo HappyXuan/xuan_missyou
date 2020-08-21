@@ -8,10 +8,7 @@ package com.lin.missyou.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -28,7 +25,7 @@ public class BannerItem {
     private Long bannerId;
 
     @ManyToOne
-    @JoinColumn(insertable = false, updatable = false, name = "bannerId")
+    @JoinColumn(foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT), insertable = false, updatable = false, name = "bannerId")
     private Banner banner;
 
 }
