@@ -10,4 +10,8 @@ spring:
     active: dev
   jpa:
     hibernate:
+<<<<<<< HEAD
       ddl-auto: none
+=======
+      ddl-auto: update
+>>>>>>> 12fa53a0c91484d7b68238b939718dd6816248cf

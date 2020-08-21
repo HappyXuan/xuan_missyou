@@ -27,8 +27,12 @@ public class Banner {
     private String img;
     private String title;
 
+<<<<<<< HEAD
     @OneToMany(mappedBy = "banner", fetch = FetchType.EAGER)
 //    @org.hibernate.annotations.ForeignKey(name = "null")
+=======
+    @OneToMany(mappedBy = "banner",fetch = FetchType.EAGER)
+>>>>>>> 12fa53a0c91484d7b68238b939718dd6816248cf
 //    @JoinColumn(name = "bannerId")
     private List<BannerItem> items;
 
